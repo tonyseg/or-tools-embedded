@@ -9,9 +9,8 @@ public class Example {
 
 	static { System.loadLibrary("jniortools"); }
 
-	private static void runLinearExample(String solverType, boolean printModel) {
-		MPSolver solver = new MPSolver("LinearProgrammingExample",
-										MPSolver.OptimizationProblemType.valueOf(solverType));
+	private static void runLinearExample(String solverType) {
+		MPSolver solver = new MPSolver("LinearExample", MPSolver.OptimizationProblemType.valueOf(solverType));
 		double infinity = MPSolver.infinity();
 
 		// x1 is continuous non-negative variables.
@@ -28,23 +27,21 @@ public class Example {
 		MPConstraint c0 = solver.makeConstraint(-infinity, 10.0);
 		c0.setCoefficient(x, 1);
 		
+		solver.solve();
 		
-		// Display
 		System.out.println("Number of variables = " + solver.numVariables());
 		System.out.println("Number of constraints = " + solver.numConstraints());
-		
-		solver.solve();
 
 		// The objective value of the solution.
 		System.out.println("Optimal objective value = " + solver.objective().value());
-
+		solver.solve();
 		// The value of each variable in the solution.
 		System.out.println("x = " + x.solutionValue());
 		
 	}
 
 	public static void main(String[] args) throws Exception {
-		runLinearExample("GLOP_LINEAR_PROGRAMMING", true);
+		runLinearExample("GLOP_LINEAR_PROGRAMMING");
 	}
 
 }
