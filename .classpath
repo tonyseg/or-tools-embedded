@@ -28,7 +28,7 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="/home/tony/git/or-tools-embedded/lib/com.google.ortools.jar"/>
-	<classpathentry kind="lib" path="/home/tony/git/or-tools-embedded/lib/protobuf.jar"/>
+	<classpathentry kind="lib" path="/home/tony/git/or-tools-embedded/src/main/resources/com.google.ortools.jar"/>
+	<classpathentry kind="lib" path="/home/tony/git/or-tools-embedded/src/main/resources/protobuf.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

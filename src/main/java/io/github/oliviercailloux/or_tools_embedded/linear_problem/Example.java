@@ -1,5 +1,7 @@
 package io.github.oliviercailloux.or_tools_embedded.linear_problem;
 
+import org.scijava.nativelib.NativeLoader;
+
 import com.google.ortools.linearsolver.MPConstraint;
 import com.google.ortools.linearsolver.MPObjective;
 import com.google.ortools.linearsolver.MPSolver;
@@ -7,9 +9,11 @@ import com.google.ortools.linearsolver.MPVariable;
 
 public class Example {
 
-	static { System.loadLibrary("jniortools"); }
+	//static { System.loadLibrary("jniortools"); }
+	
 
 	private static void runLinearExample(String solverType) {
+		
 		MPSolver solver = new MPSolver("LinearExample", MPSolver.OptimizationProblemType.valueOf(solverType));
 		double infinity = MPSolver.infinity();
 
@@ -26,7 +30,7 @@ public class Example {
 		// x1  <= 10.
 		MPConstraint c0 = solver.makeConstraint(-infinity, 10.0);
 		c0.setCoefficient(x, 1);
-		
+				
 		solver.solve();
 		
 		System.out.println("Number of variables = " + solver.numVariables());
@@ -41,7 +45,9 @@ public class Example {
 	}
 
 	public static void main(String[] args) throws Exception {
-		runLinearExample("GLOP_LINEAR_PROGRAMMING");
+		NativeLoader.loadLibrary("jniortools");
+		//runLinearExample("GLOP_LINEAR_PROGRAMMING");
+		
 	}
 
 }

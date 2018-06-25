@@ -22,7 +22,6 @@
 			<artifactId>guava</artifactId>
 			<version>23.0</version>
 		</dependency>
-
 		<dependency>
 			<groupId>ch.qos.logback</groupId>
 			<artifactId>logback-classic</artifactId>
@@ -30,30 +29,26 @@
 			<scope>runtime</scope>
 			<optional>true</optional>
 		</dependency>
-
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 			<version>4.12</version>
 			<scope>test</scope>
 		</dependency>
-		
 		<dependency>
 			<groupId>com.google.ortools</groupId>
 			<artifactId>ortools</artifactId>
 			<version>2015.08</version>
 		</dependency>
-		
 		<dependency>
 			<groupId>protobuf</groupId>
 			<artifactId>protobuf</artifactId>
 			<version>3.3.0</version>
 		</dependency>
-		
 		<dependency>
-    		<groupId>org.scijava</groupId>
-    		<artifactId>native-lib-loader</artifactId>
-    		<version>2.2.0</version>
+    			<groupId>org.scijava</groupId>
+    			<artifactId>native-lib-loader</artifactId>
+    			<version>2.2.0</version>
 		</dependency>
 	</dependencies>
 </project>
